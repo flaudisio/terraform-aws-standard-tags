@@ -1,6 +1,6 @@
-# Complete
+# Invalid tags example
 
-Complete example using all supported module inputs.
+Example using invalid tags.
 
 ## Usage
 
