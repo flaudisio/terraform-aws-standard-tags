@@ -55,6 +55,10 @@ resource "aws_autoscaling_group" "this" {
 - See the [examples](examples) folder for sample usage.
 - See [variables.tf](variables.tf) for all the variables supported by this module.
 
+## Tests
+
+See the [test](test) folder for details.
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
