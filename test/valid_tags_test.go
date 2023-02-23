@@ -43,9 +43,13 @@ func TestValidTags(t *testing.T) {
 
 		tags := terraform.OutputMap(t, terraformOptions, "tags")
 
-		assert.Contains(t, tags, "created-by", "The 'tags' output does not contain the 'created-by' tag.")
-		assert.Contains(t, tags, "environment", "The 'tags' output does not contain the 'environment' tag.")
-		assert.Contains(t, tags, "owner", "The 'tags' output does not contain the 'owner' tag.")
-		assert.Contains(t, tags, "service", "The 'tags' output does not contain the 'service' tag.")
+		assert.Contains(t, tags, "created-by", "The 'tags' output should contain the 'created-by' key.")
+		assert.Contains(t, tags, "environment", "The 'tags' output should contain the 'environment' key.")
+		assert.Contains(t, tags, "owner", "The 'tags' output should contain the 'owner' key.")
+		assert.Contains(t, tags, "service", "The 'tags' output should contain the 'service' key.")
+		assert.Contains(t, tags, "extra", "The 'tags' output should contain the 'extra' key.")
+		assert.Contains(t, tags, "key-with-dash", "The 'tags' output should contain the 'key-with-dash' key.")
+		assert.Contains(t, tags, "key-with-1-number", "The 'tags' output should contain the 'key-with-1-number' key.")
+		assert.Contains(t, tags, "key-with-trailing-number1", "The 'tags' output should contain the 'key-with-trailing-number1' key.")
 	})
 }

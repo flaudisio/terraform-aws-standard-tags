@@ -3,12 +3,15 @@
 # ------------------------------------------------------------------------------
 
 locals {
-  tags = {
-    created-by  = "terraform"
-    environment = var.environment
-    owner       = var.owner
-    service     = var.service
-  }
+  tags = merge(
+    {
+      created-by  = "terraform"
+      environment = var.environment
+      owner       = var.owner
+      service     = var.service
+    },
+    var.extra_tags
+  )
 
   tags_for_asg = [
     for k, v in local.tags :
