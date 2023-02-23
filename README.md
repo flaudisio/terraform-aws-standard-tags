@@ -85,6 +85,7 @@ No resources.
 | <a name="input_environment"></a> [environment](#input\_environment) | The environment name | `string` | n/a | yes |
 | <a name="input_owner"></a> [owner](#input\_owner) | The name of the component owner | `string` | n/a | yes |
 | <a name="input_service"></a> [service](#input\_service) | The name of the service related to the component | `string` | n/a | yes |
+| <a name="input_extra_tags"></a> [extra\_tags](#input\_extra\_tags) | A map of optional extra tags to be validated and included in the output | `map(string)` | `{}` | no |
 
 ## Outputs
 

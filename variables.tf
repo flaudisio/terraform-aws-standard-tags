@@ -27,3 +27,17 @@ variable "owner" {
     error_message = "The owner name must start with a lower case letter and can only contain lower case letters, numbers and dashes (-)."
   }
 }
+
+variable "extra_tags" {
+  description = "A map of optional extra tags to be validated and included in the output"
+  type        = map(string)
+  default     = {}
+
+  validation {
+    condition = can([
+      for key in keys(var.extra_tags) :
+      regex("^[a-z][a-z0-9-]*[a-z0-9]$", key)
+    ])
+    error_message = "All extra tag keys name must start with a lower case letter and can only contain lower case letters, numbers and dashes (-)."
+  }
+}
