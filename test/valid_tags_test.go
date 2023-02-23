@@ -50,5 +50,6 @@ func TestValidTags(t *testing.T) {
 		assert.Contains(t, tags, "extra", "The 'tags' output should contain the 'extra' key.")
 		assert.Contains(t, tags, "key-with-dash", "The 'tags' output should contain the 'key-with-dash' key.")
 		assert.Contains(t, tags, "key-with-1-number", "The 'tags' output should contain the 'key-with-1-number' key.")
+		assert.Contains(t, tags, "key-with-trailing-number1", "The 'tags' output should contain the 'key-with-trailing-number1' key.")
 	})
 }
