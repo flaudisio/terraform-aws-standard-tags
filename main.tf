@@ -5,10 +5,10 @@
 locals {
   tags = merge(
     {
-      created-by  = "terraform"
-      environment = var.environment
-      owner       = var.owner
-      service     = var.service
+      created-by   = "terraform"
+      environment  = var.environment
+      owner        = var.owner
+      service-name = var.service
     },
     var.extra_tags
   )
@@ -18,7 +18,7 @@ locals {
     {
       key                 = k
       value               = v
-      propagate_at_launch = true
+      propagate_at_launch = var.asg_propagate_at_launch
     }
   ]
 }

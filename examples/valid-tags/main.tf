@@ -2,8 +2,8 @@ module "tags" {
   source = "../../"
 
   environment = "development"
-  service     = "tf-examples"
   owner       = "infra"
+  service     = "tf-examples"
 
   extra_tags = {
     extra                     = 1

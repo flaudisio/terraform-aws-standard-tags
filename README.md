@@ -6,10 +6,10 @@ Terraform module to create standardized tags for AWS resources.
 
 This module has two main usage scenarios:
 
-- [Typical AWS resources](#typical-aws-resources)
+- [Standard AWS resources](#standard-aws-resources)
 - [Auto Scaling Groups](#auto-scaling-group)
 
-### Typical AWS resources
+### Standard AWS resources
 
 ```hcl
 module "tags" {
@@ -17,8 +17,8 @@ module "tags" {
   version = "0.2.0"
 
   environment = "development"
-  service     = "blog"
   owner       = "marketing"
+  service     = "blog"
 }
 
 resource "aws_security_group" "this" {
@@ -37,12 +37,12 @@ module "tags" {
   version = "0.2.0"
 
   environment = "production"
-  service     = "cart-backend"
   owner       = "backend-team"
+  service     = "cart-backend"
 }
 
 resource "aws_autoscaling_group" "this" {
-  name = "example"
+  name = "shopping-cart"
   # ...
 
   tags = module.tags.tags_for_asg
@@ -85,6 +85,7 @@ No resources.
 | <a name="input_environment"></a> [environment](#input\_environment) | The environment name | `string` | n/a | yes |
 | <a name="input_owner"></a> [owner](#input\_owner) | The name of the component owner | `string` | n/a | yes |
 | <a name="input_service"></a> [service](#input\_service) | The name of the service related to the component | `string` | n/a | yes |
+| <a name="input_asg_propagate_at_launch"></a> [asg\_propagate\_at\_launch](#input\_asg\_propagate\_at\_launch) | The value to set in the `propagate_at_launch` attribute of the `tags_for_asg` output | `bool` | `true` | no |
 | <a name="input_extra_tags"></a> [extra\_tags](#input\_extra\_tags) | A map of optional extra tags to be validated and included in the output | `map(string)` | `{}` | no |
 
 ## Outputs
