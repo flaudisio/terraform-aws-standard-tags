@@ -14,7 +14,7 @@ This module has two main usage scenarios:
 ```hcl
 module "tags" {
   source  = "flaudisio/standard-tags/aws"
-  version = "0.2.0"
+  version = "0.3.0"
 
   environment = "development"
   owner       = "marketing"
@@ -34,7 +34,7 @@ resource "aws_security_group" "this" {
 ```hcl
 module "tags" {
   source  = "flaudisio/standard-tags/aws"
-  version = "0.2.0"
+  version = "0.3.0"
 
   environment = "production"
   owner       = "backend-team"

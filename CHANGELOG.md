@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v0.3.0 - 2023-03-23
+
 - feat: allow customizing the `propagate_at_launch` attribute
 - refactor: rename `service` tag to `service-name`
 
