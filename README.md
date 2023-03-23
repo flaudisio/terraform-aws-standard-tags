@@ -6,10 +6,10 @@ Terraform module to create standardized tags for AWS resources.
 
 This module has two main usage scenarios:
 
-- [Typical AWS resources](#typical-aws-resources)
+- [Standard AWS resources](#standard-aws-resources)
 - [Auto Scaling Groups](#auto-scaling-group)
 
-### Typical AWS resources
+### Standard AWS resources
 
 ```hcl
 module "tags" {
@@ -17,8 +17,8 @@ module "tags" {
   version = "0.2.0"
 
   environment = "development"
-  service     = "blog"
   owner       = "marketing"
+  service     = "blog"
 }
 
 resource "aws_security_group" "this" {
@@ -37,12 +37,12 @@ module "tags" {
   version = "0.2.0"
 
   environment = "production"
-  service     = "cart-backend"
   owner       = "backend-team"
+  service     = "cart-backend"
 }
 
 resource "aws_autoscaling_group" "this" {
-  name = "example"
+  name = "shopping-cart"
   # ...
 
   tags = module.tags.tags_for_asg
