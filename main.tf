@@ -18,7 +18,7 @@ locals {
     {
       key                 = k
       value               = v
-      propagate_at_launch = true
+      propagate_at_launch = var.asg_propagate_at_launch
     }
   ]
 }

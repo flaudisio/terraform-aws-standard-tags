@@ -28,6 +28,12 @@ variable "owner" {
   }
 }
 
+variable "asg_propagate_at_launch" {
+  description = "The value to set in the `propagate_at_launch` attribute of the `tags_for_asg` output"
+  type        = bool
+  default     = true
+}
+
 variable "extra_tags" {
   description = "A map of optional extra tags to be validated and included in the output"
   type        = map(string)
